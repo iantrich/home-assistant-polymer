@@ -13,7 +13,7 @@ import { fireEvent } from "../../../../common/dom/fire_event";
 import { ActionConfig } from "../../../../data/lovelace";
 import { HomeAssistant } from "../../../../types";
 import { PictureCardConfig } from "../../cards/types";
-import "../../components/hui-action-editor";
+import "../action-editor/hui-action-editor";
 import "../../components/hui-theme-select-editor";
 import { LovelaceCardEditor } from "../../types";
 import { actionConfigStruct, EditorTarget } from "../types";
@@ -24,6 +24,7 @@ const cardConfigStruct = object({
   image: optional(string()),
   tap_action: optional(actionConfigStruct),
   hold_action: optional(actionConfigStruct),
+  double_tap_action: optional(actionConfigStruct),
   theme: optional(string()),
 });
 

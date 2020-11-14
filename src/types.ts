@@ -360,3 +360,9 @@ export type WeatherEntity = HassEntityBase & {
     wind_bearing: string;
   };
 };
+
+export interface ServiceAttribute {
+  key: string;
+  description: any;
+  example: any;
+}

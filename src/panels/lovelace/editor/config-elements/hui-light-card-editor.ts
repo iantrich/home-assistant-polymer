@@ -15,7 +15,7 @@ import "../../../../components/ha-icon-input";
 import { ActionConfig } from "../../../../data/lovelace";
 import { HomeAssistant } from "../../../../types";
 import { LightCardConfig } from "../../cards/types";
-import "../../components/hui-action-editor";
+import "../action-editor/hui-action-editor";
 import "../../components/hui-entity-editor";
 import "../../components/hui-theme-select-editor";
 import { LovelaceCardEditor } from "../../types";

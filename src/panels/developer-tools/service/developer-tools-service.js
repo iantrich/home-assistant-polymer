@@ -170,13 +170,13 @@ class HaPanelDevService extends LocalizeMixin(PolymerElement) {
                 <table class="attributes">
                   <tr>
                     <th>
-                      [[localize('ui.panel.developer-tools.tabs.services.column_parameter')]]
+                      [[localize('ui.common.services.column_parameter')]]
                     </th>
                     <th>
-                      [[localize('ui.panel.developer-tools.tabs.services.column_description')]]
+                      [[localize('ui.common.services.column_description')]]
                     </th>
                     <th>
-                      [[localize('ui.panel.developer-tools.tabs.services.column_example')]]
+                      [[localize('ui.common.services.column_example')]]
                     </th>
                   </tr>
                   <template is="dom-repeat" items="[[_attributes]]" as="attribute">

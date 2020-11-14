@@ -1,4 +1,5 @@
 import {
+  ActionConfig,
   LovelaceBadgeConfig,
   LovelaceCardConfig,
   LovelaceConfig,
@@ -86,5 +87,11 @@ export interface LovelaceGenericElementEditor extends HTMLElement {
   hass?: HomeAssistant;
   lovelace?: LovelaceConfig;
   setConfig(config: any): void;
+  refreshYamlEditor?: (focus: boolean) => void;
+}
+
+export interface LovelaceActionEditor extends HTMLElement {
+  hass?: HomeAssistant;
+  setConfig(config: ActionConfig): void;
   refreshYamlEditor?: (focus: boolean) => void;
 }

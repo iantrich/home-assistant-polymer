@@ -19,7 +19,7 @@ import "../../../../components/ha-switch";
 import { ActionConfig } from "../../../../data/lovelace";
 import { HomeAssistant } from "../../../../types";
 import { PictureEntityCardConfig } from "../../cards/types";
-import "../../components/hui-action-editor";
+import "../action-editor/hui-action-editor";
 import "../../components/hui-entity-editor";
 import "../../components/hui-theme-select-editor";
 import { LovelaceCardEditor } from "../../types";
@@ -36,6 +36,7 @@ const cardConfigStruct = object({
   aspect_ratio: optional(string()),
   tap_action: optional(actionConfigStruct),
   hold_action: optional(actionConfigStruct),
+  double_tap_action: optional(actionConfigStruct),
   show_name: optional(boolean()),
   show_state: optional(boolean()),
   theme: optional(string()),

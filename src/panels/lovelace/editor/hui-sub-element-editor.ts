@@ -12,15 +12,19 @@ import {
   query,
   TemplateResult,
 } from "lit-element";
+
 import { fireEvent, HASSDomEvent } from "../../../common/dom/fire_event";
-import "../../../components/ha-svg-icon";
+
 import type { HomeAssistant } from "../../../types";
 import type { LovelaceRowConfig } from "../entity-rows/types";
 import type { LovelaceHeaderFooterConfig } from "../header-footer/types";
-import "./entity-row-editor/hui-row-element-editor";
-import "./header-footer-editor/hui-header-footer-element-editor";
 import type { HuiElementEditor } from "./hui-element-editor";
 import type { GUIModeChangedEvent, SubElementEditorConfig } from "./types";
+
+import "../../../components/ha-svg-icon";
+import "./entity-row-editor/hui-row-element-editor";
+import "./header-footer-editor/hui-header-footer-element-editor";
+import "./action-editor/hui-action-editor";
 
 declare global {
   interface HASSDomEvents {
@@ -87,6 +91,16 @@ export class HuiSubElementEditor extends LitElement {
               @GUImode-changed=${this._handleGUIModeChanged}
             ></hui-headerfooter-element-editor>
           `
+        : this.config.type === "tap_action" ||
+          this.config.type === "hold_action" ||
+          this.config.type === "double_tap_action"
+        ? html`<hui-action-editor
+            class="editor"
+            .hass=${this.hass}
+            .value=${this.config.elementConfig}
+            @config-changed=${this._handleConfigChanged}
+            @GUImode-changed=${this._handleGUIModeChanged}
+          ></hui-action-editor>`
         : ""}
     `;
   }

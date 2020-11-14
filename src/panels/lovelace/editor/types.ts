@@ -84,7 +84,7 @@ export interface CardPickTarget extends EventTarget {
 
 export interface SubElementEditorConfig {
   index?: number;
-  elementConfig?: LovelaceRowConfig | LovelaceHeaderFooterConfig;
+  elementConfig?: LovelaceRowConfig | LovelaceHeaderFooterConfig | ActionConfig;
   type: string;
 }
 
@@ -92,12 +92,27 @@ export interface EditSubElementEvent {
   subElementConfig: SubElementEditorConfig;
 }
 
+export const confirmationConfigStruct = object({
+  text: optional(string()),
+  exemptions: optional(
+    array(
+      union([
+        object({
+          user: string(),
+        }),
+        string(),
+      ])
+    )
+  ),
+});
+
 export const actionConfigStruct = object({
   action: string(),
   navigation_path: optional(string()),
   url_path: optional(string()),
   service: optional(string()),
-  service_data: optional(object()),
+  service_data: optional(union([string(), object()])),
+  confirmation: optional(union([boolean(), confirmationConfigStruct])),
 });
 
 const buttonEntitiesRowConfigStruct = object({

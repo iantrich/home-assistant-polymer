@@ -290,7 +290,13 @@
       "successfully_deleted": "Successfully deleted",
 
       "error_required": "Required",
-      "copied": "Copied"
+      "copied": "Copied",
+      "services": {
+        "column_parameter": "Parameter",
+        "column_description": "Description",
+        "column_example": "Example",
+        "service_data": "Service Data"
+      }
     },
     "components": {
       "logbook": {
@@ -2478,6 +2484,13 @@
               "navigate": "Navigate",
               "url": "URL",
               "none": "No Action"
+            },
+            "confirmation": {
+              "no_exemptions": "No confirmation exemptions",
+              "exempt_users": "Exempt users",
+              "none": "None",
+              "select_users": "Select which users should be exempt from this confirmation",
+              "text": "Text to display in confirmation"
             }
           },
           "card": {
@@ -2603,7 +2616,9 @@
               "attribute": "Attribute",
               "camera_image": "Camera Entity",
               "camera_view": "Camera View",
+              "confirmation": "Confirmation",
               "double_tap_action": "Double Tap Action",
+              "enabled": "Enabled",
               "entities": "Entities",
               "entity": "Entity",
               "hold_action": "Hold Action",
@@ -2729,7 +2744,10 @@
             "types": {
               "header": "Header Editor",
               "footer": "Footer Editor",
-              "row": "Entity Row Editor"
+              "row": "Entity Row Editor",
+              "tap_action": "Tap Action Editor",
+              "hold_action": "Hold Action Editor",
+              "double_tap_action": "Double Tap Action Editor"
             }
           }
         },
@@ -3040,9 +3058,6 @@
             "select_service": "Select a service to see the description",
             "no_description": "No description is available",
             "no_parameters": "This service takes no parameters.",
-            "column_parameter": "Parameter",
-            "column_description": "Description",
-            "column_example": "Example",
             "fill_example_data": "Fill Example Data",
             "alert_parsing_yaml": "Error parsing YAML: {data}"
           },
